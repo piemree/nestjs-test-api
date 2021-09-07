@@ -13,12 +13,13 @@ const app_service_1 = require("./app.service");
 const user_module_1 = require("./user/user.module");
 const auth_module_1 = require("./auth/auth.module");
 const app_gateway_1 = require("./app.gateway");
-const employees_module_1 = require("./employees/employees.module");
+const typeorm_1 = require("@nestjs/typeorm");
+const ormconfig_1 = require("../../ormconfig");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [user_module_1.UserModule, auth_module_1.AuthModule, employees_module_1.EmployeesModule],
+        imports: [user_module_1.UserModule, auth_module_1.AuthModule, typeorm_1.TypeOrmModule.forRoot(ormconfig_1.default)],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, app_gateway_1.AppGateway],
     })
