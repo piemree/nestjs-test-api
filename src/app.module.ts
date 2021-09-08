@@ -6,7 +6,6 @@ import { AuthModule } from './auth/auth.module';
 import { AppGateway } from './app.gateway';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EmployeesModule } from './employees/employees.module';
-import config from '../ormconfig';
 
 @Module({
   imports: [UserModule, AuthModule,EmployeesModule],

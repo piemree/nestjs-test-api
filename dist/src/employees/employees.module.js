@@ -18,7 +18,7 @@ let EmployeesModule = class EmployeesModule {
 EmployeesModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            typeorm_1.TypeOrmModule.forRoot(ormconfig_1.default),
+            typeorm_1.TypeOrmModule.forRoot(ormconfig_1.postgresqlConfig),
             typeorm_1.TypeOrmModule.forFeature([employee_entity_1.Employee]),
         ],
         controllers: [employees_controller_1.EmployeesController],
