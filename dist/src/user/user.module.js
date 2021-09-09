@@ -12,12 +12,13 @@ const mongoose_1 = require("@nestjs/mongoose");
 const user_schema_1 = require("../schemas/user.schema");
 const user_controller_1 = require("./user.controller");
 const user_service_1 = require("./user.service");
+require('dotenv').config();
 let UserModule = class UserModule {
 };
 UserModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb+srv://emodb:emodb@herokutest.mihf4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
+            mongoose_1.MongooseModule.forRoot(process.env.MONGO_URL),
             mongoose_1.MongooseModule.forFeature([{ name: user_schema_1.User.name, schema: user_schema_1.UserSchema }]),
         ],
         controllers: [user_controller_1.UserController],

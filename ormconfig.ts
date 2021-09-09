@@ -3,6 +3,8 @@ import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConne
 import { Employee } from 'src/employees/entities/employee.entity';
 import { MongoConnectionOptions } from 'typeorm/driver/mongodb/MongoConnectionOptions';
 
+require('dotenv').config()
+
 export const sqltieConfig: SqliteConnectionOptions = {
   type: 'sqlite',
   database: 'db',
@@ -27,6 +29,6 @@ export const postgresqlConfig: PostgresConnectionOptions = {
 
 export const mongodbConfig: MongoConnectionOptions = {
   type: 'mongodb',
-  url: `mongodb+srv://emodb:emodb@herokutest.mihf4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+  url: process.env.MONGO_URL,
   entities: [Employee],
 };

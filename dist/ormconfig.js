@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mongodbConfig = exports.postgresqlConfig = exports.sqltieConfig = void 0;
 const employee_entity_1 = require("./src/employees/entities/employee.entity");
+require('dotenv').config();
 exports.sqltieConfig = {
     type: 'sqlite',
     database: 'db',
@@ -24,7 +25,7 @@ exports.postgresqlConfig = {
 };
 exports.mongodbConfig = {
     type: 'mongodb',
-    url: `mongodb+srv://emodb:emodb@herokutest.mihf4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+    url: process.env.MONGO_URL,
     entities: [employee_entity_1.Employee],
 };
 //# sourceMappingURL=ormconfig.js.map
