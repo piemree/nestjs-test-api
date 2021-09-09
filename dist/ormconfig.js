@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.postgresqlConfig = exports.sqltieConfig = void 0;
+exports.mongodbConfig = exports.postgresqlConfig = exports.sqltieConfig = void 0;
 const employee_entity_1 = require("./src/employees/entities/employee.entity");
 exports.sqltieConfig = {
     type: 'sqlite',
@@ -20,6 +20,11 @@ exports.postgresqlConfig = {
     username: 'postgres',
     password: '202020',
     synchronize: true,
+    entities: [employee_entity_1.Employee],
+};
+exports.mongodbConfig = {
+    type: 'mongodb',
+    url: `mongodb+srv://emodb:emodb@herokutest.mihf4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
     entities: [employee_entity_1.Employee],
 };
 //# sourceMappingURL=ormconfig.js.map

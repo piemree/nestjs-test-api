@@ -1,6 +1,7 @@
 import { SqliteConnectionOptions } from 'typeorm/driver/sqlite/SqliteConnectionOptions';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 import { Employee } from 'src/employees/entities/employee.entity';
+import { MongoConnectionOptions } from 'typeorm/driver/mongodb/MongoConnectionOptions';
 
 export const sqltieConfig: SqliteConnectionOptions = {
   type: 'sqlite',
@@ -21,5 +22,11 @@ export const postgresqlConfig: PostgresConnectionOptions = {
   username: 'postgres',
   password: '202020',
   synchronize: true,
+  entities: [Employee],
+};
+
+export const mongodbConfig: MongoConnectionOptions = {
+  type: 'mongodb',
+  url: `mongodb+srv://emodb:emodb@herokutest.mihf4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
   entities: [Employee],
 };

@@ -1,4 +1,4 @@
 export declare class Employee {
-    id: number;
+    _id: number;
     name: string;
 }

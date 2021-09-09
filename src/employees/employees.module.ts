@@ -3,11 +3,11 @@ import { EmployeesService } from './employees.service';
 import { EmployeesController } from './employees.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Employee } from './entities/employee.entity';
-import {sqltieConfig,postgresqlConfig} from '../../ormconfig';
+import {sqltieConfig,postgresqlConfig,mongodbConfig} from '../../ormconfig';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(postgresqlConfig),
+    TypeOrmModule.forRoot(mongodbConfig),
     TypeOrmModule.forFeature([Employee]),
   ],
   controllers: [EmployeesController],
