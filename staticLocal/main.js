@@ -27,7 +27,7 @@ const app = new Vue({
     },
   },
   created() {
-    this.socket = io("https://piemree-nest-test-repo.herokuapp.com");
+    this.socket = io("http://localhost:3000");
     this.socket.on('msgToClient', (message) => {
       this.receivedMessage(message);
       console.log(this.messages);
